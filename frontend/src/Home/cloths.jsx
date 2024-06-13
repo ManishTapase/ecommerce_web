@@ -11,8 +11,7 @@ import { useWishlist } from "../Contexts/WishlistContext";
 import { useCart } from "../Contexts/CartContext";
 import "./cloth.css"
 import Spin from "./Spin";
-
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Cloths = () => {
   const navigate = useNavigate();
   const [wishlist, setWishlist] = useWishlist();
@@ -31,7 +30,7 @@ const Cloths = () => {
   const getAllProducts = async () => {
     try {
       const { data } = await axios.get(
-        "/api/v1/product/all-products"
+        `${backendUrl}/api/v1/product/all-products`
       );
       if (data?.success) {
         const filterbymainCat = data.product.filter((it) => {
@@ -50,7 +49,7 @@ const Cloths = () => {
   const AllCategories = async () => {
     try {
       const { data } = await axios.get(
-        "/api/v1/category/allcategory"
+        `${backendUrl}/api/v1/category/allcategory`
       );
       if (data.success) {
         const filtered = data.category.filter((elm) => {
@@ -87,7 +86,7 @@ const Cloths = () => {
   const filterProduct = async () => {
     try {
       const { data } = await axios.post(
-        "/api/v1/product/filter-products",
+        `${backendUrl}/api/v1/product/filter-products`,
         {
           checked,
           radio,
