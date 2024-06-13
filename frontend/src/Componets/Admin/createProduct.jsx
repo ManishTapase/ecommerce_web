@@ -6,7 +6,7 @@ import { Select } from "antd";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 const { Option } = Select;
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000));
 const CreateProduct = () => {
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ const CreateProduct = () => {
       productData.append("mainCategory", mainCategory);
       productData.append("shipping", shipping);
       const { data } = await axios.post(
-        "/api/v1/product/create-product",
+        `${backendUrl}/api/v1/product/create-product`,
         productData
       );
       if (data?.success) {
@@ -51,7 +51,7 @@ const CreateProduct = () => {
   const AllCategories = async (req, res) => {
     try {
       const { data } = await axios.get(
-        "/api/v1/category/allcategory"
+        `${backendUrl}/api/v1/category/allcategory`
       );
       if (data.success) {
         setCategories(data.category);
