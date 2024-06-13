@@ -104,6 +104,8 @@ const Gadgets = () => {
             width: "100vw",
             display: "flex",
             flexDirection: "row",
+            overflowX:"none",
+            overflowY:"scroll"
           }}
         >
           <input id="check" type="checkbox" />
