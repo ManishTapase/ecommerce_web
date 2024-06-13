@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import Product from "./Product";
 import { Prices } from "../Prices/Prices";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Gadgets = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -21,7 +22,7 @@ const Gadgets = () => {
   const getAllProducts = async () => {
     try {
       const { data } = await axios.get(
-        "/api/v1/product/all-products"
+        `${backendUrl}/api/v1/product/all-products`
       );
       if (data?.success) {
         const filterbymainCat = data.product.filter((it) => {
@@ -40,7 +41,7 @@ const Gadgets = () => {
   const AllCategories = async () => {
     try {
       const { data } = await axios.get(
-        "/api/v1/category/allcategory"
+        `${backendUrl}/api/v1/category/allcategory`
       );
       if (data.success) {
         const filtered = data.category.filter((elm) => {
@@ -79,7 +80,7 @@ const Gadgets = () => {
   const filterProduct = async () => {
     try {
       const { data } = await axios.post(
-        "/api/v1/product/filter-products",
+        `${backendUrl}/api/v1/product/filter-products`,
         {
           checked,
           radio,
