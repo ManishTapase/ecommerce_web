@@ -30,7 +30,7 @@ const Orders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/product/all-orders"
+        "/api/v1/product/all-orders"
       );
       if (data?.success) {
         const filterbymainCat = data.orders.filter((it) => {
@@ -48,7 +48,7 @@ const Orders = () => {
   const getAllProducts = async (e) => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/product/all-products"
+        "/api/v1/product/all-products"
       );
       if (data.success) {
         setProducts(data.product);
@@ -77,7 +77,7 @@ const Orders = () => {
   const handelDelete = async (pid) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:5000/api/v1/product/delete-order/${pid}`
+        `/api/v1/product/delete-order/${pid}`
       );
       if (data.success) {
         toast.success("order cancel successfully");
