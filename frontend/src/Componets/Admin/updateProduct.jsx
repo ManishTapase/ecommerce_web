@@ -6,7 +6,7 @@ import { Select } from "antd";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 const { Option } = Select;
-
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000));
 const UpdateProduct = () => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const UpdateProduct = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/single-product/${params.slug}`
+        `${backendUrl}/api/v1/product/single-product/${params.slug}`
       );
       if (data?.success) {
         toast.success(data.message);
@@ -46,7 +46,7 @@ const UpdateProduct = () => {
   const AllCategories = async (req, res) => {
     try {
       const { data } = await axios.get(
-        "/api/v1/category/allcategory"
+        `${backendUrl}/api/v1/category/allcategory`
       );
       if (data.success) {
         setCategories(data.category);
@@ -70,7 +70,7 @@ const UpdateProduct = () => {
       photo && productData.append("photo", photo);
       productData.append("category", category);
       const { data } = await axios.put(
-        `/api/v1/product/update-product/${pid}`,
+        `${backendUrl}/api/v1/product/update-product/${pid}`,
         productData
       );
       if (data.success) {
@@ -87,7 +87,7 @@ const UpdateProduct = () => {
 
   const handelDelete = async()=>{
     try {
-      const {data} = await axios.delete( `/api/v1/product/delete-product/${pid}`);
+      const {data} = await axios.delete( `${backendUrl}/api/v1/product/delete-product/${pid}`);
       if(data.success){
         toast.success('product deleted successfully');
         navigate("/dashboard/admin/product");
@@ -158,7 +158,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div>
                     <img
-                    src={`/api/v1/product/get-product-photo/${pid}`}
+                    src={`${backendUrl}/api/v1/product/get-product-photo/${pid}`}
                       alt="product-photo"
                       height={"200px"}
                       className="img img-responsive"
