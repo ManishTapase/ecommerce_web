@@ -7,6 +7,7 @@ import { useCart } from "../../Contexts/CartContext";
 import { useSearch } from "../../Contexts/SearchContext";
 import axios from "axios";
 import { useWishlist } from "../../Contexts/WishlistContext";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Header = () => {
   const [cart, setCart] = useCart();
   const [wishlist, setWishlist] = useWishlist();
@@ -25,7 +26,7 @@ const Header = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        `/api/v1/product/search/${values.keyword}`
+        `${backendUrl}/api/v1/product/search/${values.keyword}`
       );
       setValues({ ...values, results: data });
       //   console.log(values)
