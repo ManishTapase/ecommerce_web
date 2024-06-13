@@ -69,7 +69,7 @@ const Wishlist = () => {
                       }}
                     >
                       <img
-                        src={`http://localhost:5000/api/v1/product/get-product-photo/${elm.p._id}`}
+                        src={`/api/v1/product/get-product-photo/${elm.p._id}`}
                         style={{
                           height: "7rem",
                           width: "8rem",
