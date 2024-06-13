@@ -5,6 +5,7 @@ import UserMenu from "../DashBoard/UserMenu";
 import axios from "axios";
 import Product from "../../Home/Product";
 import { toast } from "react-toastify";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Orders = () => {
   const [auth, setAuth] = useAuth();
   const [order, setOrder] = useState([]);
@@ -30,7 +31,7 @@ const Orders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        "/api/v1/product/all-orders"
+        `${backendUrl}/api/v1/product/all-orders`
       );
       if (data?.success) {
         const filterbymainCat = data.orders.filter((it) => {
@@ -48,7 +49,7 @@ const Orders = () => {
   const getAllProducts = async (e) => {
     try {
       const { data } = await axios.get(
-        "/api/v1/product/all-products"
+        `${backendUrl}/api/v1/product/all-products`
       );
       if (data.success) {
         setProducts(data.product);
@@ -77,7 +78,7 @@ const Orders = () => {
   const handelDelete = async (pid) => {
     try {
       const { data } = await axios.delete(
-        `/api/v1/product/delete-order/${pid}`
+        `${backendUrl}/api/v1/product/delete-order/${pid}`
       );
       if (data.success) {
         toast.success("order cancel successfully");
