@@ -33,7 +33,7 @@ const CreateProduct = () => {
       productData.append("mainCategory", mainCategory);
       productData.append("shipping", shipping);
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/product/create-product",
+        "/api/v1/product/create-product",
         productData
       );
       if (data?.success) {
@@ -51,7 +51,7 @@ const CreateProduct = () => {
   const AllCategories = async (req, res) => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/category/allcategory"
+        "/api/v1/category/allcategory"
       );
       if (data.success) {
         setCategories(data.category);
