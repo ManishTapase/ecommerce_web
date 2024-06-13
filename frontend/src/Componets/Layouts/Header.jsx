@@ -25,7 +25,7 @@ const Header = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1/product/search/${values.keyword}`
+        `/api/v1/product/search/${values.keyword}`
       );
       setValues({ ...values, results: data });
       //   console.log(values)
