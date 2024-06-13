@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import DropIn from "braintree-web-drop-in-react";
 import { useNavigate } from "react-router-dom";
 import { useWishlist } from "../Contexts/WishlistContext";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const CartPage = () => {
   const navigate = useNavigate();
   const [auth, setAuth] = useAuth();
@@ -57,7 +58,7 @@ const CartPage = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        "/api/v1/auth/update-User-Profile",
+        `${backendUrl}/api/v1/auth/update-User-Profile`,
         {
           name,
           address,
@@ -84,7 +85,7 @@ const CartPage = () => {
   const getToken = async () => {
     try {
       const { data } = await axios.get(
-        "/api/v1/product/braintree/token"
+        `${backendUrl}/api/v1/product/braintree/token`
       );
       setClientToken(data?.clientToken);
     } catch (error) {
@@ -102,7 +103,7 @@ const CartPage = () => {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
       const { data } = await axios.post(
-        "/api/v1/product/braintree/payment",
+        `${backendUrl}/api/v1/product/braintree/payment`,
         {
           nonce,
           cart,
@@ -166,7 +167,7 @@ const CartPage = () => {
                     }}
                   >
                     <img
-                      src={`http://localhost:5000/api/v1/product/get-product-photo/${elm.p._id}`}
+                      src={`${backendUrl}/api/v1/product/get-product-photo/${elm.p._id}`}
                       style={{
                         height: "7rem",
                         width: "8rem",
@@ -404,13 +405,6 @@ const CartPage = () => {
               </label>
               <div
                 id="el2"
-                // style={{
-                //   // border: "2px solid black",
-                //   position: "relative",
-                //   left: "2.2em",
-                //   width: "28em",
-                //   boxShadow: "10px 10px 10px 10px lightblue",
-                // }}
               >
                 <form
                   onSubmit={handelUpdate}
@@ -418,10 +412,7 @@ const CartPage = () => {
                     display: "flex",
                     flexDirection: "column",
                     flexWrap: "wrap",
-                    // justifyContent: "space-around",
                     alignItems: "center",
-                    // position:"relative",
-                    // bottom:"4em"
                   }}
                 >
                   <h5
@@ -564,18 +555,6 @@ const CartPage = () => {
               </div>
               <div
                 id="elm3"
-                // style={{
-                //   width: "20em",
-                //   height: "27em",
-                //   // border: "2px solid black",
-                //   position: "relative",
-                //   left: "2em",
-                //   margin: "0px",
-                //   padding: "0px",
-                //   boxShadow: "10px 10px 10px 10px lightblue",
-                //   justifyContent: "space-around",
-                //   alignItems: "center",
-                // }}
               >
                 <div
                   style={{
