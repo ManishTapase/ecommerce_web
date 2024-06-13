@@ -4,6 +4,7 @@ import { useWishlist } from "../Contexts/WishlistContext.jsx";
 import { toast } from "react-toastify";
 import { useCart } from "../Contexts/CartContext.jsx";
 import "./wishlist.css";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Wishlist = () => {
   const [wishlist, setWishlist] = useWishlist();
   const [cart, setCart] = useCart();
@@ -69,7 +70,7 @@ const Wishlist = () => {
                       }}
                     >
                       <img
-                        src={`/api/v1/product/get-product-photo/${elm.p._id}`}
+                        src={`${backendUrl}/api/v1/product/get-product-photo/${elm.p._id}`}
                         style={{
                           height: "7rem",
                           width: "8rem",
