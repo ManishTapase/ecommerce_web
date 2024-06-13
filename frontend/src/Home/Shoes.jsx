@@ -27,7 +27,7 @@ const Shoes = () => {
   const AllCategories = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/category/allcategory"
+        "/api/v1/category/allcategory"
       );
       if (data.success) {
         const filtered = data.category.filter((elm) => {
@@ -44,7 +44,7 @@ const Shoes = () => {
   const getAllProducts = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/product/all-products"
+        "/api/v1/product/all-products"
       );
       if (data?.success) {
        const filterbymainCat =  data.product.filter((it)=>{
@@ -84,7 +84,7 @@ const Shoes = () => {
   const filterProduct = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/product/filter-products",
+        "/api/v1/product/filter-products",
         {
           checked,
           radio,
