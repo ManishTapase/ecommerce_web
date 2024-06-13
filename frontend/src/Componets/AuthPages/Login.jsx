@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import Layout from "../Layouts/layout";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Login = () => {
     const navigate = useNavigate();
     const [email,setEmail] = useState("");
@@ -9,7 +10,7 @@ const Login = () => {
  const HandelSubmit = async(e)=>{
        e.preventDefault();
        try{
-         const res = await axios.post('/api/v1/auth/login',{
+         const res = await axios.post(`${backendUrl}/api/v1/auth/login`,{
           email,password
          })
           console.log(res.data);
