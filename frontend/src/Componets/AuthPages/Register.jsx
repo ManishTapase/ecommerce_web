@@ -10,10 +10,11 @@ const Register = () => {
     const [phone,setPhone] = useState("");
     const [answer,setAnswer] = useState("");
     const [address,setAddress] = useState("");
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
  const HandelSubmit = async(e)=>{
        e.preventDefault();
        try {
-         const res = await axios.post('/api/v1/auth/register',{
+         const res = await axios.post(`${backendUrl}/api/v1/auth/register`,{
           name,email,phone,password,answer,address
          })
           console.log(res.data);
