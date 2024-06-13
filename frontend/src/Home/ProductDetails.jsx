@@ -69,7 +69,7 @@ const ProductDetails = () => {
           }}
         >
           <img
-            src={`/api/v1/product/get-product-photo/${pid}`}
+            src={`${backendUrl}/api/v1/product/get-product-photo/${pid}`}
             className="card-img-top"
             alt={product.name}
             height="400px"
