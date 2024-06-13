@@ -9,7 +9,7 @@ const Products = () => {
   const AllProducts = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/product/all-products"
+        "/api/v1/product/all-products"
       );
       if (data?.success) {
         toast.success(data.message);
@@ -55,7 +55,7 @@ const Products = () => {
                     key={p._id}
                   >
                       <img
-                        src={`http://localhost:5000/api/v1/product/get-product-photo/${p._id}`}
+                        src={`/api/v1/product/get-product-photo/${p._id}`}
                         className="card-img-top"
                         id="images"
                         style={{ width: "15em", height: "12em" }}
