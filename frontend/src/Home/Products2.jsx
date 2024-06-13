@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../Contexts/CartContext";
 import { toast } from "react-toastify";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Product2 = ({ products }) => {
   const [cart , setCart] = useCart();
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const Product2 = ({ products }) => {
                 }}
               >
                 <img
-                  src={`/api/v1/product/get-product-photo/${p._id}`}
+                  src={`${backendUrl}/api/v1/product/get-product-photo/${p._id}`}
                   className="card-img-top"
                   id="images"
                   style={{
