@@ -38,7 +38,7 @@ const Product2 = ({ products }) => {
                 }}
               >
                 <img
-                  src={`http://localhost:5000/api/v1/product/get-product-photo/${p._id}`}
+                  src={`/api/v1/product/get-product-photo/${p._id}`}
                   className="card-img-top"
                   id="images"
                   style={{
