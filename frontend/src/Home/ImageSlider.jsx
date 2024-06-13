@@ -1,19 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
-import shoes from "../images/shoes.png";
+import hrx from "../images/hrx.jpg";
+import gadgets from "../images/gadgets.png";
+import cloths from "../images/cloths.png";
 const ImageSlider = () => {
   const [currInd, setCurrInd] = useState(0);
   const timerRef = useRef(null);
   const slides = [
     {
-      url: "http://localhost:3000/hrx.jpg",
+      url:hrx,
       title: "shoes",
     },
     {
-      url: "http://localhost:3000/gadgets.png",
+      url: gadgets,
       title: "gadgets",
     },
     {
-      url: "http://localhost:3000/cloths.png",
+      url: cloths,
       title: "cloths",
     },
   ];
