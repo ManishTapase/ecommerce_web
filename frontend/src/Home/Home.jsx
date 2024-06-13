@@ -15,7 +15,7 @@ const Home = () => {
   const getAllProducts = async (e) => {
     try {
       const { data } = await axios.get(
-        "/api/v1/product/all-products"
+        `${backendUrl}/api/v1/product/all-products`
       );
       
       if (data.success) {
