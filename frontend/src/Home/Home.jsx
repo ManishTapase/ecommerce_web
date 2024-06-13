@@ -9,6 +9,7 @@ import shoes from "../images/shoes.png";
 import Screen from "./Screen";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Home = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
