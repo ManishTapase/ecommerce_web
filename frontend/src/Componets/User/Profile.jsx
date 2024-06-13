@@ -23,7 +23,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        "http://localhost:5000/api/v1/auth/update-User-Profile",
+        "/api/v1/auth/update-User-Profile",
         {
           name,
           phone,
