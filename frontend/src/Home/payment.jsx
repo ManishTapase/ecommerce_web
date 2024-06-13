@@ -16,7 +16,7 @@ const Payment = () => {
   const getToken = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/product/braintree/token"
+        "/api/v1/product/braintree/token"
       );
       setClientToken(data?.clientToken);
     } catch (error) {
@@ -34,7 +34,7 @@ const Payment = () => {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/product/braintree/payment",
+        "/api/v1/product/braintree/payment",
         {
           nonce,
           cart,
