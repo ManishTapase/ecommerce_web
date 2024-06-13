@@ -6,6 +6,7 @@ import { Modal } from "antd";
 import {toast }from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 3000));
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const CreateCategory = () => {
   // const [mainName, setMainName] = useState("");
   const [name, setName] = useState("");
@@ -19,7 +20,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "/api/v1/category/create-Category",
+        `${backendUrl}/api/v1/category/create-Category`,
         { name,main }
       );
       if (data?.success) {
@@ -43,7 +44,7 @@ const CreateCategory = () => {
   const AllCategories = async () => {
     try {
       const { data } = await axios.get(
-        "/api/v1/category/allcategory"
+        `${backendUrl}/api/v1/category/allcategory`
       );
       if (data.success) {
         setCategories(data.category);
@@ -57,7 +58,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `/api/v1/category/update-category/${select._id}`,
+        `${backendUrl}/api/v1/category/update-category/${select._id}`,
         { name:upName, main:upMainName }
       );
       console.log(select._id);
@@ -78,7 +79,7 @@ const CreateCategory = () => {
 
   const handelDelete = async(_id)=>{
     try {
-      const {data} = await axios.delete(`/api/v1/category/delete-category/${_id}`);
+      const {data} = await axios.delete(`${backendUrl}/api/v1/category/delete-category/${_id}`);
         if(data.success){
             AllCategories();
             toast.promise(resolveAfter3Sec,{success:data.message});
