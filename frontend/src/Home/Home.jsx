@@ -15,7 +15,7 @@ const Home = () => {
   const getAllProducts = async (e) => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/product/all-products"
+        "/api/v1/product/all-products"
       );
       
       if (data.success) {
