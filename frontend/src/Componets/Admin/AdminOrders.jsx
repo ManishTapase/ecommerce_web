@@ -41,7 +41,7 @@ const AdminOrders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/product/all-orders"
+        "/api/v1/product/all-orders"
       );
       if (data?.success) {
         // const filterbymainCat = data.orders.filter((it) => {
@@ -58,7 +58,7 @@ const AdminOrders = () => {
   const getAllProducts = async (e) => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/product/all-products"
+        "/api/v1/product/all-products"
       );
       if (data.success) {
         setProducts(data.product);
@@ -73,7 +73,7 @@ const AdminOrders = () => {
   const getAllUsers = async (e) => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/auth/all-users"
+        "/api/v1/auth/all-users"
       );
       if (data.success) {
         setUsers(data.users);
@@ -122,7 +122,7 @@ const AdminOrders = () => {
   const handelUpdateStatus = async (oid) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/v1/product/update-status/${oid}`,
+        `/api/v1/product/update-status/${oid}`,
         { status: status }
       );
       console.log(oid);
