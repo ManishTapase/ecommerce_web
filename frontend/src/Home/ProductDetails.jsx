@@ -16,7 +16,7 @@ const ProductDetails = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1/product/single-product/${params.slug}`
+        `/api/v1/product/single-product/${params.slug}`
       );
       if (data.success) {
         setPid(data.singleproduct._id);
@@ -36,7 +36,7 @@ const ProductDetails = () => {
     const getSimilarProducts = async (pid, cid) => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/api/v1/product/related-product/${pid}/${cid}`
+          `/api/v1/product/related-product/${pid}/${cid}`
         );
         setRelatedProducts(data?.products);
       } catch (error) {
@@ -68,7 +68,7 @@ const ProductDetails = () => {
           }}
         >
           <img
-            src={`http://localhost:5000/api/v1/product/get-product-photo/${pid}`}
+            src={`/api/v1/product/get-product-photo/${pid}`}
             className="card-img-top"
             alt={product.name}
             height="400px"
@@ -179,7 +179,7 @@ const ProductDetails = () => {
                 }}
               >
                 <img
-                  src={`http://localhost:5000/api/v1/product/get-product-photo/${p._id}`}
+                  src={`/api/v1/product/get-product-photo/${p._id}`}
                   className="card-img-top"
                   id="images"
                   style={{
