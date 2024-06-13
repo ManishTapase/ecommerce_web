@@ -4,12 +4,13 @@ import AdminMenu from "../DashBoard/AdminMenu";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Products = () => {
   const [product, setProduct] = useState([]);
   const AllProducts = async () => {
     try {
       const { data } = await axios.get(
-        "/api/v1/product/all-products"
+        `${backendUrl}/api/v1/product/all-products`
       );
       if (data?.success) {
         toast.success(data.message);
@@ -55,7 +56,7 @@ const Products = () => {
                     key={p._id}
                   >
                       <img
-                        src={`/api/v1/product/get-product-photo/${p._id}`}
+                        src={`${backendUrl}/api/v1/product/get-product-photo/${p._id}`}
                         className="card-img-top"
                         id="images"
                         style={{ width: "15em", height: "12em" }}
