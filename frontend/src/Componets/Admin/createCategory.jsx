@@ -19,7 +19,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/category/create-Category",
+        "/api/v1/category/create-Category",
         { name,main }
       );
       if (data?.success) {
@@ -43,7 +43,7 @@ const CreateCategory = () => {
   const AllCategories = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1/category/allcategory"
+        "/api/v1/category/allcategory"
       );
       if (data.success) {
         setCategories(data.category);
@@ -57,7 +57,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/v1/category/update-category/${select._id}`,
+        `/api/v1/category/update-category/${select._id}`,
         { name:upName, main:upMainName }
       );
       console.log(select._id);
@@ -78,7 +78,7 @@ const CreateCategory = () => {
 
   const handelDelete = async(_id)=>{
     try {
-      const {data} = await axios.delete(`http://localhost:5000/api/v1/category/delete-category/${_id}`);
+      const {data} = await axios.delete(`/api/v1/category/delete-category/${_id}`);
         if(data.success){
             AllCategories();
             toast.promise(resolveAfter3Sec,{success:data.message});
