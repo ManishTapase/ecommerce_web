@@ -98,7 +98,7 @@ const Gadgets = () => {
       <Layout>
         <div
           style={{
-            position: "absolute",
+            position: "relative",
             top: "10vh",
             height: "88vh",
             width: "100vw",
