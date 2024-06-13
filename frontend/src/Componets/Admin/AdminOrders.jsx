@@ -12,6 +12,7 @@ const AdminOrders = () => {
   const [users, setUsers] = useState([]);
   const [visible, setVisible] = useState(false);
   const [orderId, setOrderId] = useState("");
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const statuses = [
     "Not Process",
     "Processing",
@@ -41,7 +42,7 @@ const AdminOrders = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        "/api/v1/product/all-orders"
+        `${backendUrl}/product/all-orders`
       );
       if (data?.success) {
         // const filterbymainCat = data.orders.filter((it) => {
@@ -58,7 +59,7 @@ const AdminOrders = () => {
   const getAllProducts = async (e) => {
     try {
       const { data } = await axios.get(
-        "/api/v1/product/all-products"
+        `${backendUrl}/product/all-products`
       );
       if (data.success) {
         setProducts(data.product);
@@ -73,7 +74,7 @@ const AdminOrders = () => {
   const getAllUsers = async (e) => {
     try {
       const { data } = await axios.get(
-        "/api/v1/auth/all-users"
+        `${backendUrl}/auth/all-users`
       );
       if (data.success) {
         setUsers(data.users);
