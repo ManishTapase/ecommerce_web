@@ -1,0 +1,7 @@
+.swiper{
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-around;
+}

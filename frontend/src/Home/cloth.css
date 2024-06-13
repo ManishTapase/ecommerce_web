@@ -1,0 +1,27 @@
+.clothContainer{
+    position: absolute;
+    top: 10vh;
+    height: 88vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+  }
+
+.clothProduct{
+    position: relative;
+    height: 90vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    left: 2em;
+}
+
+.clothProduct::-webkit-scrollbar{
+    display:none;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 900px) {
+    .clothProduct{
+        position: relative;
+        left: 0em;
+    }
+}

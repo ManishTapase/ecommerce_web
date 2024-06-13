@@ -1,0 +1,85 @@
+#mainContainer li{
+    list-style: none;
+}
+
+#element1 {
+    list-style: none;
+}
+#element1 a{
+    font-size: large;
+    font-weight:600;
+    color: rgb(16, 200, 16);
+}
+#element2{
+    position: relative;
+    width:10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#container2{
+    position:relative;
+    top:4em;
+    left:2em;
+}
+
+.container1{
+    position: absolute;
+    display: flex;
+    top:-.1em;
+    left: -20em;
+    height: 88vh;
+    width: 20em;
+    border-right: .5px solid black;
+    background: #83ffcfe9;
+    transition: all .4s ease;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+.container1::-webkit-scrollbar{
+    display: none;
+}
+#check{
+    display:none;
+}
+#check:checked ~ .container1{
+    left:0;
+    z-index:2;
+}
+label #bars , label #cross{
+    position: absolute;
+    z-index:3;
+}
+label #cross{
+    position: relative;
+    top: .1em;
+    left: -19em;
+    transition: all .4s ease;
+}
+label #bars{
+    position:absolute;
+    left: .5em;
+    top: .5em;
+}
+
+#check:checked ~ label #bars{
+    left:20em;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cross{
+    left:19em;
+}
+
+.proCont{
+    overflow-y: scroll;
+    position: relative;
+    left:2em;
+}
+
+.proCont::-webkit-scrollbar{
+    display: none;
+}
+body::-webkit-scrollbar{
+    display: none;
+}

@@ -1,0 +1,137 @@
+/* font-family: 'Bebas Neue', sans-serif;
+font-family: 'Foldit', cursive;
+font-family: 'Mochiy Pop One', sans-serif;
+font-family: 'Oswald', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Foldit:wght@400;600&family=Mochiy+Pop+One&family=Nova+Square&family=Oswald:wght@500&family=Ubuntu:ital,wght@0,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Foldit:wght@400;600&family=Mochiy+Pop+One&family=Nova+Square&family=Oswald:wght@500&family=Roboto+Condensed&family=Ubuntu:ital,wght@0,400;1,500&display=swap");
+
+.body {
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#orderBox::-webkit-scrollbar {
+  display: none;
+}
+
+#sliderimg{
+  height: 60vh;
+  width: 90vw;
+  position: relative;
+  left: 3.5em;
+  top: 2em;
+}
+
+#categoryLable{
+  font-family: Ubuntu;
+  font-size: 20px;
+  position: relative;
+  top: 1em;
+  left: 2em;
+}
+
+#productLable{
+  font-family: Ubuntu;
+  font-size: 20px;
+  position: relative;
+  top: 1em;
+  left: 2em;
+}
+
+ .homeProCont{
+   position: relative;
+   left:3em;
+   overflow-x: hidden;
+ }
+@media only screen and (min-width: 375px) and (max-width: 900px) {
+  .body {
+    overflow-x: hidden;
+    display: block !important ;
+  }
+  #sliderimg{
+    height: 40vh;
+    width: 90vw;
+    position: relative;
+    left: 1.5em;
+    top: 2em;
+  }
+  .main{
+    position: relative;
+    top:-14em
+  }
+  #categoryLable{
+    position: relative;
+    top:-10em
+  }
+  #productLable{
+    position: relative;
+    top:-10em
+  }
+  .homeProCont{
+    position: relative;
+    left:0em;
+    top:-13em;
+    height: max-content;
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  left: 50vw;
+  top: 45vh;
+  border: 3px solid;
+  border-color: #0044ff #0044ff transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #00ff11 #00ff11;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #426de4 #426de4 transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

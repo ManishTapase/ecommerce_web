@@ -1,0 +1,62 @@
+.navbar {
+  width: 100vw;
+  height: 5vw;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+}
+
+.nav-item {
+  font-size: medium;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  position: relative;
+  left: 4vw;
+  top: 1vh;
+}
+
+.nav-item:hover {
+  border-bottom: 2px solid green;
+}
+#item-2 {
+  font-size: medium;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  position: relative;
+  left: 2.5em;
+  top: 0.4em;
+}
+
+#item-2:hover {
+  border-bottom: 2px solid green;
+}
+
+.Auth {
+  position: relative;
+  display: flex;
+}
+
+#hide {
+  position:absolute;
+  padding:10px;
+  margin: 0px;
+  border: 0px;
+  top: 2em;
+  display: flex;
+  visibility: hidden;
+  z-index: 1;
+  background-color: white;
+}
+
+#hide a{
+  text-decoration: none;
+}
+#hide a:hover{
+  border-bottom: 2px solid green;
+}
+
+li:hover ul#hide{
+    opacity: 1;
+    visibility: visible;
+    list-style: none;
+}
