@@ -4,6 +4,7 @@ import UserMenu from "../DashBoard/UserMenu";
 import { useAuth } from "../../Contexts/AuthContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Profile = () => {
   const [auth, setAuth] = useAuth();
   const [name, setName] = useState("");
@@ -23,7 +24,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        "/api/v1/auth/update-User-Profile",
+        `${backendUrl}/api/v1/auth/update-User-Profile`,
         {
           name,
           phone,
