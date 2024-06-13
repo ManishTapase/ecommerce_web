@@ -8,7 +8,7 @@ const AdminRoute = () => {
     const [ok,setOk] = useState(false);
     useEffect(()=>{
         const checkAuth = async()=>{
-            const result = await axios.get("http://localhost:5000/api/v1/auth/admin-auth");
+            const result = await axios.get("/api/v1/auth/admin-auth");
             if(result.data.ok){
                 setOk(true);
             }else{
