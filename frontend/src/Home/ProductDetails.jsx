@@ -3,6 +3,7 @@ import Layout from "../Componets/Layouts/layout";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
   const [pid, setPid] = useState("");
@@ -16,7 +17,7 @@ const ProductDetails = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/single-product/${params.slug}`
+        `${backendUrl}/api/v1/product/single-product/${params.slug}`
       );
       if (data.success) {
         setPid(data.singleproduct._id);
@@ -36,7 +37,7 @@ const ProductDetails = () => {
     const getSimilarProducts = async (pid, cid) => {
       try {
         const { data } = await axios.get(
-          `/api/v1/product/related-product/${pid}/${cid}`
+          `${backendUrl}/api/v1/product/related-product/${pid}/${cid}`
         );
         setRelatedProducts(data?.products);
       } catch (error) {
@@ -179,7 +180,7 @@ const ProductDetails = () => {
                 }}
               >
                 <img
-                  src={`/api/v1/product/get-product-photo/${p._id}`}
+                  src={`${backendUrl}/api/v1/product/get-product-photo/${p._id}`}
                   className="card-img-top"
                   id="images"
                   style={{
