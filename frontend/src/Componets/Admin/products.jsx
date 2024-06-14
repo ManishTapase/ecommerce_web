@@ -5,6 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
+import "./create.css"
 const Products = () => {
   const [product, setProduct] = useState([]);
   const AllProducts = async () => {
@@ -29,19 +30,13 @@ const Products = () => {
   }, []);
   return (
     <Layout>
-      <div  style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            position: "relative",
-            top: "4em",
-          }}>
+      <div  className="prodaaa">
         <div className="col-md-3">
           <AdminMenu />
         </div>
         <div className="col-md-9">
           <h1 className="text-center">All products</h1>
-          <div style={{ overflowY: "scroll", scrollBehavior:"smooth",overflowX:"hidden",display:"flex",flexWrap:"wrap",flexDirection:"row" }}>
+          <div  id="productss">
             {product.map((p) => {
               return (
                 <Link
