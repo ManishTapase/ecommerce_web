@@ -5,6 +5,7 @@ import axios from "axios";
 import { Select } from "antd";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import "./create.css"
 const { Option } = Select;
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000));
@@ -67,14 +68,7 @@ const CreateProduct = () => {
     <>
       <Layout>
         <div className="row"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            position: "relative",
-            top: "4em",
-            
-          }}
+           id="createProduct"
         >
           <div className="col-md-3">
             <AdminMenu />
