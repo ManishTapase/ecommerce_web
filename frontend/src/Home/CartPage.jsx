@@ -125,8 +125,7 @@ const CartPage = () => {
       <Layout>
         <div className="cart-page">
           <div
-            className="col-md-12"
-            style={{ boxShadow: "0px 5px 0px lightblue" }}
+            style={{ boxShadow: "0px 5px 0px lightblue",width:"100vw" }}
           >
             <h4 className="text-center bg-light p-2 mb-1">
               {!auth?.user
