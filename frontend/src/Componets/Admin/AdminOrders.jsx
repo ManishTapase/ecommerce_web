@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import AdminMenu from "../DashBoard/AdminMenu";
 import { Modal, Select } from "antd";
 const { Option } = Select;
+import "../DashBoard/admin.css"
 const AdminOrders = () => {
   const [order, setOrder] = useState([]);
   const [products, setProducts] = useState([]);
@@ -138,20 +139,10 @@ const AdminOrders = () => {
     <>
       <Layout>
         <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            position: "relative",
-            top: "4em",
-          }}
+          id="ordersss"
         >
           <div
-            style={{
-              width: "20em",
-              height: "90vh",
-              borderRight: "2px solid #1bdd35",
-            }}
+            id="adminOrdermenu"
           >
             <AdminMenu />
           </div>
@@ -169,14 +160,7 @@ const AdminOrders = () => {
                   return (
                     <>
                       <div
-                        style={{
-                          height: "max-content",
-                          width: "50em",
-                          border: "1px solid #1bdd35",
-                          marginBottom: "10px",
-                          marginLeft: "10px",
-                          borderRadius: "5px",
-                        }}
+                         id="tuple"
                       >
                         <table className="table" key={it._id}>
                           <thead>
