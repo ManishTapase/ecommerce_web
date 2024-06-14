@@ -1,0 +1,48 @@
+#newwone{
+    position:relative;
+    top:2em;
+    width: 20rem;
+    height: 90vh;
+    border-right: 2px solid #83f292;
+    position:fixed;
+}
+#adminOrdermenu{
+    width:20rem;
+    height: 90vh;
+}
+
+#ordersss{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    top: 4em;
+}
+
+#tuple{
+    height:max-content;
+    width: 100vw;
+    border: 1px solid #1bdd35;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+@media only screen and (min-width: 375px) and (max-width: 900px){
+    #newwone{
+        position:relative;
+        top:4em;
+        width:100vw;
+        height: 20vh;
+    }  
+    #adminOrdermenu{
+        height: max-content;
+    }
+    #tuple{
+        width:50em;
+    }
+    #ordersss{
+        position: relative;
+        top:0px;
+    }
+}
+
