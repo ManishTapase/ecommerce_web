@@ -1,7 +1,8 @@
 .clothContainer{
-    position: absolute;
+    position:relative;
     top: 10vh;
-    height: 88vh;
+    height:100vh;
+    overflow-x: block;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -10,6 +11,7 @@
 .clothProduct{
     position: relative;
     height: 90vh;
+    margin: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
     left: 2em;
@@ -22,6 +24,9 @@
 @media only screen and (min-width: 375px) and (max-width: 900px) {
     .clothProduct{
         position: relative;
-        left: 0em;
+        left: -1em;
+        overflow-x:scroll;
+        margin: 0px;
+        
     }
 }
