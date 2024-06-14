@@ -5,7 +5,7 @@ const AdminDashboard = () => {
   return (
     <>
     <Layout>
-        <div className='container-fluid'
+        <div style={{height:"80vh"}} className='container-fluid'
          >
             <AdminMenu/>
         </div>
