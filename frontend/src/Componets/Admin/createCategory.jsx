@@ -5,9 +5,9 @@ import axios from "axios";
 import { Modal } from "antd";
 import {toast }from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import "./create.css"
 const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 3000));
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
-import "./create.css"
 const CreateCategory = () => {
   // const [mainName, setMainName] = useState("");
   const [name, setName] = useState("");
