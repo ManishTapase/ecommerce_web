@@ -2,6 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import Layout from "../Componets/Layouts/layout";
 import { Checkbox, Radio } from "antd";
 import "./short.css";
+import "./cloth.css"
 import axios from "axios";
 import { toast } from "react-toastify";
 import Product from "./Product";
@@ -100,12 +101,10 @@ const Gadgets = () => {
           style={{
             position: "relative",
             top: "10vh",
-            height: "95vh",
+            height: "88vh",
             width: "100vw",
             display: "flex",
             flexDirection: "row",
-            overflowX:"none",
-            overflowY:"scroll"
           }}
         >
           <input id="check" type="checkbox" />
@@ -182,7 +181,7 @@ const Gadgets = () => {
             </>
           ) : (
             <>
-              <div className="proCont">
+              <div className="clothProduct">
                 <Product products={products} />
               </div>
             </>
