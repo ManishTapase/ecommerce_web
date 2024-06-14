@@ -5,12 +5,7 @@ const AdminMenu = () => {
     <>
       <div
         className="list-group"
-        style={{
-          width: "18em",
-          height: "90vh",
-          borderRight: "2px solid #83f292",
-          position:"fixed",
-        }}
+        id="newwone"
         >
         <h3>Admin Menu</h3>
         <NavLink
