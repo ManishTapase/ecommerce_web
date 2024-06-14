@@ -42,7 +42,6 @@
     box-shadow: 0px 0px 0px 0px lightblue;
     transition: all .5s ease;
     background: white;
-    border: 1px solid black;
     /* display: none; */
 }
 #elm1{
@@ -60,9 +59,8 @@
 #elm3{
     width: 22em;
     height: 27em;
-    border: 1px solid black;
     position:absolute;
-    left: 50em;
+    left: 60em;
     margin: 0px;
     padding: 0px;
     /* box-shadow: 10px 10px 10px 10px lightblue; */
@@ -104,7 +102,7 @@ label #left{
     flex-direction: row;
     flex-flow: wrap;
     width:100vw;
-    height:100vh;
+    height:36em;
    }
 
 
@@ -132,6 +130,7 @@ label #left{
     justify-content: space-around;
     align-content: center;
     overflow: scroll;
+    position: relative;
     height: 25em;
     width: 22em;
   }
@@ -147,12 +146,15 @@ label #left{
     }
     #el2{
         position:relative;
+        top: -4em;
         left:0em;
+        height:30em;
     }
     .cart-page{
         display: flex;
         flex-wrap: wrap;
-        height:1em; 
+        height: max-content;
+        height:70em; 
     }
 
     #checking , label #right,label #left{
@@ -173,6 +175,7 @@ label #left{
         height: 27em;
         position: relative;
         left:0em;
+        top: -10em;
         justify-content: space-around;
         align-items: center;
     }
@@ -183,8 +186,8 @@ label #left{
     flex-direction: row;
     flex-wrap: wrap;
     width: 100vw;
-    height: max-content;
-    overflow: hidden;
+    height:10em;
+    overflow:visible;
 }
 .paymentCard{
     display: flex;
@@ -194,6 +197,5 @@ label #left{
     height:30em;
     width:100vw;
     position:relative;
-    top: -10em;
   }
 }
