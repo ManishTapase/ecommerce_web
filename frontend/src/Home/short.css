@@ -44,11 +44,11 @@
 }
 #check:checked ~ .container1{
     left:0;
-    z-index:2;
+    z-index:1;
 }
 label #bars , label #cross{
     position: absolute;
-    z-index:3;
+    z-index:2;
 }
 label #cross{
     position: relative;
@@ -73,8 +73,10 @@ label #bars{
 
 .proCont{
     overflow-y: scroll;
+    overflow-x: hidden;
     position: relative;
-    left:2em;
+    left:1em;
+    margin: 10px;
 }
 
 .proCont::-webkit-scrollbar{
@@ -82,4 +84,14 @@ label #bars{
 }
 body::-webkit-scrollbar{
     display: none;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 900px) {
+    .proCont{
+        position: relative;
+        margin:0px;
+        left: 0em;
+        overflow-x: visible;
+        overflow-y: scroll;
+    }
 }
