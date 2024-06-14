@@ -4,8 +4,8 @@ import AdminMenu from "../DashBoard/AdminMenu";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
 import "./create.css"
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 const Products = () => {
   const [product, setProduct] = useState([]);
   const AllProducts = async () => {
