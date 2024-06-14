@@ -36,24 +36,11 @@ const Product = ({ products }) => {
         {products.map((p) => {
           return (
             <div
-              style={{
-                width: "11rem",
-                height: "18rem",
-                marginRight: "10px",
-                marginBottom: "10px",
-                // border: "1px solid black",
-                // boxShadow:"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
-                boxShadow: "10px 10px 5px lightblue",
-              }}
+              id="cardID"
               key={p._id}
             >
               <div
-                style={{
-                  width: "11rem",
-                  height: "11rem",
-                  margin: "0px",
-                  padding: "0px",
-                }}
+                id="innerCard"
               >
                 <img
                   src={`${backendUrl}/api/v1/product/get-product-photo/${p._id}`}
