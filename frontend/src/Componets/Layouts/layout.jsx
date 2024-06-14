@@ -15,11 +15,11 @@ const Layout = ({children,description,keywords,titles,author}) => {
         <title>{titles}</title>
       </Helmet>
       <Header/>
-      <ToastContainer/>
-      <main style={{height:"max-content"}}>
-        {children}
-      </main>
-      <Footer/>
+      <section className="mainview">
+        <ToastContainer />
+        <main style={{ height: "max-content" }}>{children}</main>
+      </section>
+        <Footer />
     </div>
   );
 }
