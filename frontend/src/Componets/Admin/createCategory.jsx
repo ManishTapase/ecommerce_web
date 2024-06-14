@@ -7,6 +7,7 @@ import {toast }from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 3000));
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
+import "./create.css"
 const CreateCategory = () => {
   // const [mainName, setMainName] = useState("");
   const [name, setName] = useState("");
@@ -93,20 +94,14 @@ const CreateCategory = () => {
   return (
     <>
       <Layout>
-        <div  style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            position: "relative",
-            top: "4em",
-          }}>
+        <div id="createCat">
           <div className="col-md-3">
             <AdminMenu />
           </div>
           <div  id="orderBox" style={{ width: "53em", height: "90vh", overflow: "scroll" }}>
             <h2>Manage categories </h2>
             <div className="p-3" style={{ display: "flex" }}>
-              <form onSubmit={handelSubmit} action="">
+              <form onSubmit={handelSubmit} action="" id="form">
                 <input
                   placeholder="Enter new category name"
                   type="text"
