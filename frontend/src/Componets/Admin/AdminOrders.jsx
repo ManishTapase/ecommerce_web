@@ -124,7 +124,7 @@ const AdminOrders = () => {
   const handelUpdateStatus = async (oid) => {
     try {
       const { data } = await axios.put(
-        `/api/v1/product/update-status/${oid}`,
+        `${backendUrl}/api/v1/product/update-status/${oid}`,
         { status: status }
       );
       console.log(oid);
