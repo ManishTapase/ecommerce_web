@@ -28,7 +28,6 @@ const Wishlist = () => {
           style={{
             height: "max-content",
             width: "100vw",
-            border: "2px solid black",
             display: "flex",
             flexDirection: "column",
             position: "relative",
@@ -38,7 +37,7 @@ const Wishlist = () => {
           <div
             id="wishlistDiv"
             style={{
-              height: "100vh",
+              height: "80vh",
               width: "100vw",
               display: "flex",
               flexDirection: "row",
