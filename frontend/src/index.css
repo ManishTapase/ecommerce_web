@@ -6,13 +6,20 @@ font-family: 'Ubuntu', sans-serif; */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Foldit:wght@400;600&family=Mochiy+Pop+One&family=Nova+Square&family=Oswald:wght@500&family=Ubuntu:ital,wght@0,400;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Foldit:wght@400;600&family=Mochiy+Pop+One&family=Nova+Square&family=Oswald:wght@500&family=Roboto+Condensed&family=Ubuntu:ital,wght@0,400;1,500&display=swap");
 
+.mainview{
+  overflow-x:hidden;
+  height:fit-content;
+}
 .body {
-  overflow-x: hidden;
+  overflow-x:hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  width:100vw;
 }
-
+::-webkit-scrollbar{
+  display: none;
+}
 #orderBox::-webkit-scrollbar {
   display: none;
 }
@@ -46,10 +53,27 @@ font-family: 'Ubuntu', sans-serif; */
    left:3em;
    overflow-x: hidden;
  }
+
+ #cardID{
+  width: 11rem;
+  height: 18rem;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+#innerCard{
+  width: 11rem;
+  height: 11rem;
+  margin: 0px;
+  padding: 0px;
+}
+
 @media only screen and (min-width: 375px) and (max-width: 900px) {
   .body {
     overflow-x: hidden;
     display: block !important ;
+    height: max-content;
   }
   #sliderimg{
     height: 40vh;
@@ -72,9 +96,19 @@ font-family: 'Ubuntu', sans-serif; */
   }
   .homeProCont{
     position: relative;
-    left:0em;
+    left:-1em;
     top:-13em;
     height: max-content;
+  }
+  #cardID{
+    height: 18em;
+    width: 11em;
+  }
+  #innerCard{
+    width: 10rem;
+    height: 10rem;
+    margin: 0px;
+    padding: 0px;
   }
 }
 
