@@ -38,8 +38,8 @@ const Header = () => {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg" >
-        <div className="container-fluid" style={{background:"white"}}>
+      <nav className="navbar navbar-expand-lg"  style={{zIndex:10}} >
+        <div className="container-fluid" style={{background:"white",zIndex:5}}>
           <Link className="navbar-brand" href="#">
             {/* <h3 style={{ color: "#00d35f", position: "relative", left: "3vw" }}>
               SHOP
@@ -119,7 +119,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <form className="d-flex" role="search" onSubmit={handleSearch}>
+          <form id='searchbro' className="d-flex" role="search" onSubmit={handleSearch}>
             <input
               className="form-control me-2"
               type="search"
@@ -210,6 +210,7 @@ const Header = () => {
               <>
                 <ul className="navbar-nav" id="profile">
                   <li
+                    id="wishlist"
                     className="nav-item"
                     style={{ position: "relative", left: "5vw" }}
                   >
@@ -229,6 +230,7 @@ const Header = () => {
                   </li>
                   &nbsp;
                   <li
+                    id="cartss"
                     className="nav-item"
                     style={{ position: "relative", left: "5vw" }}
                   >
