@@ -60,3 +60,23 @@ li:hover ul#hide{
     visibility: visible;
     list-style: none;
 }
+
+@media only screen and (min-width: 375px) and (max-width: 900px){
+  #item-2 {
+    position: relative;
+    left: 1em;
+    top: 0.4em;
+  } 
+  #searchbro{
+    width:15em;
+    position:absolute;
+    left:5.5em;
+  }
+  #profile{
+    position:relative;
+    left:2vw;
+  }
+}
+
+/* cartss */
+/* wishlist */
