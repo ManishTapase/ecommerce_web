@@ -5,8 +5,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import AdminMenu from "../DashBoard/AdminMenu";
 import { Modal, Select } from "antd";
-const { Option } = Select;
 import "../DashBoard/admin.css"
+const { Option } = Select;
 const AdminOrders = () => {
   const [order, setOrder] = useState([]);
   const [products, setProducts] = useState([]);
