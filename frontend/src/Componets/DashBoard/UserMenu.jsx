@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {NavLink} from 'react-router-dom';
-
+import "./admin.css"
 const UserMenu = () => {
   const [color1,setColor1] = useState("white")
   const [color2,setColor2] = useState("#1bdd35")
@@ -8,11 +8,7 @@ const UserMenu = () => {
       
       <div
         className="list-group"
-        style={{
-          width: "20em",
-          height: "90vh",
-          borderRight: "2px solid #83f292",
-        }}
+        id="newwone"
        >
         <h3>USER MENU</h3>
         <NavLink
